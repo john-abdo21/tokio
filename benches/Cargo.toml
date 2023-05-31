@@ -21,6 +21,11 @@ tokio-stream = { path = "../tokio-stream" }
 libc = "0.2.42"
 
 [[bench]]
+name = "select"
+path = "select.rs"
+harness = false
+
+[[bench]]
 name = "spawn"
 path = "spawn.rs"
 harness = false
@@ -84,3 +89,6 @@ harness = false
 name = "time_now"
 path = "time_now.rs"
 harness = false
+
+[profile.bench]
+debug = true
