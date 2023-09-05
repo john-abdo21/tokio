@@ -22,6 +22,11 @@ cfg_io_util! {
     pub use self::sync_bridge::SyncIoBridge;
 }
 
+#[cfg(all(unix, feature = "net", feature = "io-util"))]
+mod stream_fd;
+#[cfg(all(unix, feature = "net", feature = "io-util"))]
+pub use stream_fd::*;
+
 pub use self::copy_to_bytes::CopyToBytes;
 pub use self::inspect::{InspectReader, InspectWriter};
 pub use self::read_buf::read_buf;
